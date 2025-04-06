@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import { withBasePath } from "../utils/deepgramUtils";
 
 const AnimatedBackground = ({ children }) => {
   return (

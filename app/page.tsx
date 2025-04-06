@@ -11,33 +11,14 @@ import { CaretIcon } from "./components/icons/CaretIcon";
 import PromptSuggestions from "./components/PromptSuggestions";
 import Conversation from "./components/Conversation";
 import { isMobile } from "react-device-detect";
-import PopupButton from "./components/PopupButton";
 import MobileMenu from "./components/MobileMenu";
-import { PencilIcon } from "./components/icons/PencilIcon";
-import InstructionInput from "./components/InstructionInput";
 import { TerminalIcon } from "./components/icons/TerminalIcon";
 import CustomHeader from "./components/CustomHeader";
-import { useStsQueryParams } from "./hooks/UseStsQueryParams";
 import { useDeepgram } from "./context/DeepgramContextProvider";
 import BehindTheScenes from "./components/BehindTheScenes";
 import TitleUpdater from "./components/TitleUpdater";
 
 
-const DesktopMenuItems = () => {
-  const { instructions } = useStsQueryParams();
-  return (
-    <>
-      <PopupButton
-        buttonIcon={<PencilIcon />}
-        buttonText={
-          <span>Prompt {instructions && <span className="text-[#809bce]">*</span>}</span>
-        }
-        popupContent={<InstructionInput className="w-96" focusOnMount />}
-        tooltipText={instructions ? "Using your custom prompt. Click to edit." : null}
-      />
-    </>
-  );
-};
 
 export default function Home() {
   const { messages, status } = useVoiceBot();
