@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #809bce;
+  --light-blue: #c6def1;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --primary-color: #809bce;
+  --primary-dark: #6a85b3;
+  --primary-light: #c6def1;
+  --secondary-color: #3498db;
+  --secondary-dark: #2980b9;
+  --secondary-light: #EBF5FB;
+  --danger-color: #e74c3c;
+  --warning-color: #f1c40f;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --background-light: #ffffff;
+  --background-dark: #2c3e50;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+/* Base font styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  background: var(--light-blue);
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Apply Merriweather to all text elements */
+h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, select, a {
+  font-family: 'Merriweather', serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: 'Merriweather', serif !important;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Override Tailwind's font classes */
+.font-inter, .font-favorit, .font-fira {
+  font-family: 'Merriweather', serif !important;
+}
+
+.orb-animation {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  width: 250px !important;
+  height: 250px !important;
+  position: relative !important;
+}
+
+.orb-animation img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Center transcript */
+.transcript-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  font-family: 'Merriweather', serif !important;
+}
+
+/* Blue buttons */
+button.blue-button {
+  background-color: var(--primary-blue);
+  color: white;
+  transition: background-color 0.3s;
+  font-family: 'Merriweather', serif !important;
+}
+
+button.blue-button:hover {
+  background-color: #6a85b3;
+}
+
+/* Make text elements use the right colors */
+.text-primary-blue {
+  color: var(--primary-blue) !important;
+}
+
+.bg-primary-blue {
+  background-color: var(--primary-blue) !important;
+}
+
+.text-light-blue {
+  color: var(--light-blue) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue) !important;
+}
+
+/* Width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Speech Bubbles Scroll Element */
+.scrollable-element {
+  overflow: auto;
+
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.speech-bubble {
+  position: relative;
+  width: 264px;
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  background: #232329;
+  border-radius: 60px;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 170px;
+  top: 95px;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #232329 transparent transparent transparent;
+  transform: translateX(15%) rotate(-135deg);
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+}
+
+.scale-up {
+  animation: scaleUp 0.1s forwards;
+}
+
+.scale-down {
+  animation: scaleDown 0.1s forwards;
+}
+
+/* Orb Animation */
+
+/* Base style (applies to very small screens, smaller than 640px) */
+.orb-animation {
+  width: 183px;
+  height: 183px;
+  max-height: 30vh;
+}
+.active-order .orb-animation {
+  width: 130px;
+  height: 130px;
+}
+
+/* Small devices (>=640px) */
+@media (min-width: 640px) {
+  .orb-animation {
+    width: 240px;
+    height: 240px;
+  }
+  .active-order .orb-animation {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Medium devices (>=768px) */
+@media (min-width: 768px) {
+  .orb-animation {
+    width: 240px;
+    height: 240px;
+  }
+  .active-order .orb-animation {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Large devices (>=1024px) */
+@media (min-width: 1024px) {
+  .orb-animation {
+    width: 421px;
+    height: 421px;
+  }
+  .active-order .orb-animation {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Extra large devices (>=1280px) */
+@media (min-width: 1280px) {
+  .orb-animation {
+    width: 421px;
+    height: 421px;
+  }
+  .active-order .orb-animation {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Extra extra large devices (>=1536px) */
+@media (min-width: 1536px) {
+  .orb-animation {
+    width: 421px;
+    height: 421px;
+  }
+  .active-order .orb-animation {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Animated Background */
+
+.animatedBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  display: none; /* hide by default */
+}
+
+@media (min-width: 1024px) {
+  .animatedBackground {
+    display: block; /* show on desktop */
+  }
+}
+
+/* Voice avatar styling */
+.voice-avatar-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-avatar-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure circular avatars with visible borders */
+.voice-list__icon {
+  position: relative;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-width: 3px !important; /* Enforce thicker borders */
+  border-style: solid !important;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1); /* Add shadow to make light borders visible */
+}
+
+.voice-list__icon img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
